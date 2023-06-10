@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Tela1 from './src/telas/Tela1';
+import Tela2 from './src/telas/Tela2';
+import Tela3 from './src/telas/Tela3';
+import Tela4 from './src/telas/Tela4';
+import Tela5 from './src/telas/Tela5';
+import TelaPrincipal from './src/telas/TelaPrincipal';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="TelaPrincipal" component={TelaPrincipal} />
+        <Stack.Screen name="Tela1" component={Tela1} />
+        <Stack.Screen name="Tela2" component={Tela2} />
+        <Stack.Screen name="Tela3" component={Tela3} />
+        <Stack.Screen name="Tela4" component={Tela4} />
+        <Stack.Screen name="Tela5" component={Tela5} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, Button } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Button } from 'react-native';
 
 
 function Tela1({ navigation }) {
@@ -8,10 +8,19 @@ function Tela1({ navigation }) {
       <Text>Spider-Man 2099</Text>
       <ImageBackground source={require('../../assets/SpiderMan2099.jpg')} style={styles.background}>
         <Button title="Proxima" onPress={() => navigation.navigate('Tela2')} />
-        <Button title="Principal" onPress={() => navigation.navigate('PaginaPrincipal')} />
+        <Button title="Principal" onPress={() => navigation.navigate('TelaPrincipal')} />
       </ImageBackground>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover', 
+    width: '100%',
+    height: '100%',
+  },
+});
 
 export default Tela1;
